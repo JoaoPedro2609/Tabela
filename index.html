@@ -1,0 +1,47 @@
+<!-- Italo Trancoso Lopes / João Pedro Oliveira -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amamos Programar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>
+        table, th, td{
+            border: 1px double black;
+        }
+    </style>
+    
+<h1>Criar uma lista de tarefas: </h1>
+
+<div class="taf">
+<input type="text" id="item" placeholder="Novo item"/>
+<input type="text" id="dt" placeholder="Insira a data de conclusão">
+<button onclick="addtabela()">Adicionar</button>
+<br><br>
+<table id="lista">
+    <tr>
+        <th>Tarefa</th>
+        <th>Data de conclusão</th>
+        
+<script>
+    function addtabela() {
+        const texto = document.getElementById('item').value;
+        const data = document.getElementById('dt').value;
+        const novoitem = document.createElement('tr');
+        const tdTexto = document.createElement('td');
+        const tdData = document.createElement('td');
+        tdTexto.textContent = texto;
+        tdData.textContent = data;
+        novoitem.appendChild(tdTexto);
+        novoitem.appendChild(tdData);
+        document.getElementById('lista').appendChild(novoitem);
+        document.getElementById('item').value = '';
+        document.getElementById('dt').value = '';
+    }
+</script>
+
+</body>
+</html>
